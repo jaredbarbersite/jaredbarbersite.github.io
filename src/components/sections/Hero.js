@@ -64,7 +64,14 @@ const Hero = ({
             </h1>
             {/* <BookLink to="/Signup" className="button button-wide-mobile button-sm">Book now</BookLink> */}
             <div className="container-xs">
-              <video src={video} autoPlay loop muted />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<video className="app__backgroundVideo" autoplay loop muted playsinline>
+      <source src=${video} type="video/mp4" />
+      Your browser does not support the video tag.
+</video>`,
+                }}
+              ></div>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button wideMobile>
