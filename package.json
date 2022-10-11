@@ -2,7 +2,7 @@
   "name": "barber-shop-site",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://jaredbarbershop.com",
+  "homepage": "https://jaredsbarbershop.com",
   "dependencies": {
     "-": "^0.0.1",
     "classnames": "^2.2.6",
