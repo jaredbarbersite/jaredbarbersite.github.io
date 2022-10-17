@@ -2,7 +2,6 @@ import React from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
-import Button from "../elements/Button";
 import video from "../../video.mp4";
 import { Link as BookLink } from "react-router-dom";
 
@@ -73,15 +72,14 @@ const Hero = ({
                 }}
               ></div>
               <div className="reveal-from-bottom" data-reveal-delay="600">
-                <ButtonGroup>
-                  <Button wideMobile>
+                <br />
+                <ButtonGroup wideMobile>
                     <BookLink
                       to="/booking"
                       className="button button-wide-mobile button-sm"
                     >
                       Book now
                     </BookLink>
-                  </Button>
                 </ButtonGroup>
               </div>
             </div>
