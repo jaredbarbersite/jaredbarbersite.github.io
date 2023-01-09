@@ -110,7 +110,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="gallery" spy={true} smooth={true}>Gallery</Link>
+                      <Link to="gallery" spy={true} smooth={true} style={{color: '#454545'}}>Gallery</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -119,7 +119,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="about" spy={true} smooth={true}>About me</Link>
+                      <Link to="about" spy={true} smooth={true} style={{color: '#454545'}}>About me</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -138,7 +138,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="services" spy={true} smooth={true}>Services</Link>
+                      <Link to="services" spy={true} smooth={true} style={{color: '#454545'}}>Services</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -146,7 +146,7 @@ const Header = ({
                       className="list-reset header-nav"
                     >
                       <li>
-                        <BookLink to="/booking" className="button button-wide-mobile button-sm">Book now</BookLink>
+                        <BookLink to="/booking" className="button button-wide-mobile button-sm" style={{color: '#454545'}}>Book now</BookLink>
                       </li>
                     </ul>}
                 </div>

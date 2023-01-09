@@ -38,10 +38,10 @@ const SectionHeader = ({
           {...props}
           className={classes}
         >
-          <div className="container-xs">
+          <div  style={{color: '#454545'}} className="container-xs">
             {children}
             {data.title &&
-              <Component className={
+              <Component  style={{color: '#454545'}} className={
                 classNames(
                   'mt-0',
                   data.paragraph ? 'mb-16' : 'mb-0'

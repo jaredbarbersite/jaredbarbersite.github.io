@@ -65,10 +65,10 @@ const FeaturesSplit = ({
 
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
-                <h2 className="mt-0 mb-12">
+                <h2  style={{color: '#454545'}} className="mt-0 mb-12">
                   Jared Leung
                   </h2>
-                  <h5>
+                  <h5  style={{color: '#454545'}}>
                   Hello, being a barber has been a passion of mine for the past 5 years. With experience in both a barbershop and home business I have now built a studio out of my home and hope to be able to provide high quality services unique to you!
                   </h5>
               </div>

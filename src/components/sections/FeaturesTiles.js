@@ -35,7 +35,7 @@ const FeaturesTiles = ({
   const innerClasses = classNames(
     'features-tiles-inner section-inner pt-0',
     topDivider && 'has-top-divider',
-    bottomDivider && 'has-bottom-divider'
+    bottomDivider && 'has-bottom-divider',
   );
 
   const tilesClasses = classNames(
@@ -45,7 +45,7 @@ const FeaturesTiles = ({
 
   const sectionHeader = {
     title: 'Gallery',
-    paragraph: 'Some of my work!'
+    paragraph: 'Some of my work!',
   };
 
   return (
