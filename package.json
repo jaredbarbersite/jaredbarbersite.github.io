@@ -15,6 +15,7 @@
     "react-scroll": "^1.8.7",
     "sass": "^1.49.7",
     "save-dev": "^0.0.1-security"
+    
   },
   "repository": {
     "type": "git",
