@@ -58,7 +58,7 @@ const Hero = ({
             <h1
               style={{color: '#454545'}}
               className="mt-0 mb-16 reveal-from-bottom"
-              data-reveal-delay="200"
+              data-reveal-delay="100"
             >
               Jared's <br></br>Barbershop
             </h1>
