@@ -52,7 +52,7 @@ const Testimonial = ({
           <div className={tilesClasses}>
             <div
               className="tiles-item reveal-from-right"
-              data-reveal-delay="150"
+              data-reveal-delay="100"
             >
               <div className="tiles-item-inner">
                     <Image
@@ -62,14 +62,14 @@ const Testimonial = ({
                       height={250} />
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
                   <center><h4>Haircut</h4></center>
-                  <center><h5>C$40.00 (60mins)</h5></center>
+                  <center><h5>C$60.00 (60mins)</h5></center>
                 </div>
               </div>
             </div>
 
             <div
               className="tiles-item reveal-from-bottom"
-              data-reveal-delay="150"
+              data-reveal-delay="100"
             >
               <div className="tiles-item-inner">
                     <Image
@@ -79,13 +79,13 @@ const Testimonial = ({
                       height={250} />
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
                   <center><h4>Side Fade</h4></center>
-                  <center><h5>C$35.00 (45mins)</h5></center>
+                  <center><h5>C$50.00 (45mins)</h5></center>
                 </div>
               </div>
             </div>
             <div
               className="tiles-item reveal-from-right"
-              data-reveal-delay="150"
+              data-reveal-delay="100"
             >
               <div className="tiles-item-inner">
                     <Image
@@ -94,14 +94,14 @@ const Testimonial = ({
                       width={300}
                       height={250} />
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <center><h4>Beard (Add-on)</h4></center>
+                  <center><h4>Beard (Add-on to haircut)</h4></center>
                   <center><h5>C$5.00 (15mins)</h5></center>
                 </div>
               </div>
             </div>
             <div
               className="tiles-item reveal-from-left"
-              data-reveal-delay="150"
+              data-reveal-delay="100"
             >
               <div className="tiles-item-inner">
                     <Image
@@ -117,7 +117,7 @@ const Testimonial = ({
             </div>
             <div
               className="tiles-item reveal-from-left"
-              data-reveal-delay="150"
+              data-reveal-delay="100"
             >
               <div className="tiles-item-inner">
                     <Image
