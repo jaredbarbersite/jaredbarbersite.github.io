@@ -33,7 +33,8 @@ const NewClient = ({
       const parser = new DOMParser();
       const doc = parser.parseFromString(response.data, 'text/html');
       const contentElement = doc.querySelector('.doc-content') || doc.body;
-      const content = contentElement ? contentElement.innerHTML : 'Content not found';
+      let content = contentElement ? contentElement.innerHTML : 'Content not found';
+      content = content.replace(/<a /g, '<a style="color: blue;" ');
       setDocumentContent(content);
     } catch (error) {
       console.error('Error fetching document content:', error);
@@ -69,7 +70,7 @@ const NewClient = ({
   };
 
   const contentStyle = {
-    maxWidth: '200px',
+    maxWidth: '275px',
     margin: '0 auto',
     padding: '20px',
     backgroundColor: 'white',
