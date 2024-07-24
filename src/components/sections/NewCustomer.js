@@ -32,7 +32,8 @@ const NewClient = ({
       );
       const parser = new DOMParser();
       const doc = parser.parseFromString(response.data, 'text/html');
-      const content = doc.querySelector('#contents')?.innerHTML || 'Content not found';
+      const contentElement = doc.querySelector('.doc-content') || doc.body;
+      const content = contentElement ? contentElement.innerHTML : 'Content not found';
       setDocumentContent(content);
     } catch (error) {
       console.error('Error fetching document content:', error);
@@ -42,7 +43,7 @@ const NewClient = ({
 
   useEffect(() => {
     fetchDocumentContent();
-    const interval = setInterval(fetchDocumentContent); // Poll every 60 seconds
+    const interval = setInterval(fetchDocumentContent, 60000); // Poll every 60 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -67,6 +68,18 @@ const NewClient = ({
     title: 'Booking policy',
   };
 
+  const contentStyle = {
+    maxWidth: '200px',
+    margin: '0 auto',
+    padding: '20px',
+    backgroundColor: 'white',
+    borderRadius: '8px',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+    overflowWrap: 'break-word',
+    textAlign: 'left',
+    color: 'black'
+  };
+
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
@@ -79,7 +92,11 @@ const NewClient = ({
             >
               <div className="tiles-item-inner">
                 <center>
+                  <h4>If you're a new customer, please fill out form below. Estimated time it takes for me to get back to you is also below</h4>
+                </center>
+                <center>
                   <div
+                    style={contentStyle}
                     dangerouslySetInnerHTML={{ __html: documentContent }}
                   />
                 </center>
