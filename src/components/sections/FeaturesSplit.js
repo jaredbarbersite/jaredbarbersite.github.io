@@ -69,7 +69,7 @@ const FeaturesSplit = ({
                   Jared Leung
                   </h2>
                   <h5  style={{color: '#454545'}}>
-                  Hello, being a barber has been a passion of mine for the past 5 years. With experience in both a barbershop and home business I have now built a studio out of my home and hope to be able to provide high quality services unique to you!
+                  Hello, being a barber has been a passion of mine for the past 7 years. With experience in both a barbershop and home business I have now built a studio out of my home and hope to be able to provide high quality services unique to you!
                   </h5>
               </div>
               <div className={

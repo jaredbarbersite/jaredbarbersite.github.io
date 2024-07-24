@@ -62,7 +62,7 @@ const Testimonial = ({
                       height={250} />
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
                   <center><h4>Haircut</h4></center>
-                  <center><h5>C$60.00 (60mins)</h5></center>
+                  <center><h5>C$80.00 (60mins)</h5></center>
                 </div>
               </div>
             </div>
