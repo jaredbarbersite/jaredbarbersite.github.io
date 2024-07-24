@@ -1,8 +1,8 @@
-import React from "react";
-import classNames from "classnames";
-import { SectionTilesProps } from "../../utils/SectionProps";
-import SectionHeader from "./partials/SectionHeader";
-// import Image from '../elements/Image';
+import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
+import { SectionTilesProps } from '../../utils/SectionProps';
+import SectionHeader from './partials/SectionHeader';
+import axios from 'axios';
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -23,25 +23,48 @@ const NewClient = ({
   pushLeft,
   ...props
 }) => {
+  const [documentContent, setDocumentContent] = useState('');
+
+  const fetchDocumentContent = async () => {
+    try {
+      const response = await axios.get(
+        'https://docs.google.com/document/d/e/2PACX-1vRhiTYUk2DRVwfliFvYLedANKO_ijoWGkITg4cFg8OwH85xfDm7uhn90j3Tu_uktiT2cC8Ag_1FIdhh/pub'
+      );
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(response.data, 'text/html');
+      const content = doc.querySelector('#contents')?.innerHTML || 'Content not found';
+      setDocumentContent(content);
+    } catch (error) {
+      console.error('Error fetching document content:', error);
+      setDocumentContent('Error fetching content');
+    }
+  };
+
+  useEffect(() => {
+    fetchDocumentContent();
+    const interval = setInterval(fetchDocumentContent); // Poll every 60 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const outerClasses = classNames(
-    "testimonial section",
-    topOuterDivider && "has-top-divider",
-    bottomOuterDivider && "has-bottom-divider",
-    hasBgColor && "has-bg-color",
-    invertColor && "invert-color",
+    'testimonial section',
+    topOuterDivider && 'has-top-divider',
+    bottomOuterDivider && 'has-bottom-divider',
+    hasBgColor && 'has-bg-color',
+    invertColor && 'invert-color',
     className
   );
 
   const innerClasses = classNames(
-    "testimonial-inner section-inner",
-    topDivider && "has-top-divider",
-    bottomDivider && "has-bottom-divider"
+    'testimonial-inner section-inner',
+    topDivider && 'has-top-divider',
+    bottomDivider && 'has-bottom-divider'
   );
 
-  const tilesClasses = classNames("tiles-wrap", pushLeft && "push-left");
+  const tilesClasses = classNames('tiles-wrap', pushLeft && 'push-left');
 
   const sectionHeader = {
-    title: "Booking policy",
+    title: 'Booking policy',
   };
 
   return (
@@ -55,68 +78,15 @@ const NewClient = ({
               data-reveal-delay="150"
             >
               <div className="tiles-item-inner">
-                <center><h4>To inquire about getting a haircut, please contact me at jared.leung on Instagram</h4></center>
+                <center>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: documentContent }}
+                  />
+                </center>
               </div>
             </div>
           </div>
         </div>
-        {/* <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}>
-
-            <div className="tiles-item reveal-from-right" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Roman Level</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-bottom">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Diana Rynzhuk</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-left" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Ben Stafford</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div> */}
       </div>
     </section>
   );
