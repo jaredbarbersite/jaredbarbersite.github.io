@@ -69,7 +69,7 @@ const FeaturesSplit = ({
                   Jared Leung
                   </h2>
                   <h5  style={{color: '#454545'}}>
-                  Hello, being a barber has been a passion of mine for the past 7 years. With experience in both a barbershop and home business I have now built a studio out of my home and hope to be able to provide high quality services unique to you!
+                  Hi, I'm Jared! Barbering has been a passion of mine that I have been pursuing for over 8 years now. With experiences in both public and private barbershop businesses, I now have 2 studios located around the Greater Toronto Area to provide high quality services unique to you! Book me for a Transformation!
                   </h5>
               </div>
               <div className={
