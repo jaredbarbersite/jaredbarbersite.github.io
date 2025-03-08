@@ -43,6 +43,28 @@ const FeaturesTiles = ({
     pushLeft && 'push-left'
   );
 
+   const backgroundStyle = {
+    // Light base color
+    backgroundColor: '#f5f5f5',
+  
+    // Diagonal stripes with wider spacing
+    backgroundImage: `
+      repeating-linear-gradient(
+        -45deg,
+        #f5f5f5 0,
+        #f5f5f5 59px,
+        #e6e6e6 30px,
+        #e6e6e6 60px
+      )
+    `,
+    position: 'relative',
+    paddingTop: '60px',
+    paddingBottom: '60px'
+  };
+
+
+  
+
   const sectionHeader = {
     title: 'Gallery',
     paragraph: 'Some of my work!',

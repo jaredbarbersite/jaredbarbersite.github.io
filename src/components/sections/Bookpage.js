@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
@@ -25,6 +25,8 @@ const Bookpage = ({
   pushLeft,
   ...props
 }) => {
+  const [showLocationOptions, setShowLocationOptions] = useState(false);
+  
   const outerClasses = classNames(
     "testimonial section",
     topOuterDivider && "has-top-divider",
@@ -46,6 +48,10 @@ const Bookpage = ({
     title: "Booking policy",
   };
 
+  const handleExistingCustomerClick = () => {
+    setShowLocationOptions(true);
+  };
+
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
@@ -53,9 +59,47 @@ const Bookpage = ({
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className={tilesClasses}>
               <div className="tiles-item-inner">
-                    <center><a href="https://jaredleunghaircutting.setmore.com/"><Button wideMobile>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exisiting Customer&nbsp;&nbsp;&nbsp;&nbsp;</Button></a></center>
+                {!showLocationOptions ? (
+                  <>
+                    <center>
+                      <Button wideMobile onClick={handleExistingCustomerClick}>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Existing Customer&nbsp;&nbsp;&nbsp;&nbsp;
+                      </Button>
+                    </center>
                     <br></br>
-                    <BookLink to='/new-client'><Button wideMobile>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Customer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Button></BookLink>
+                    <center>
+                      <BookLink to='/new-client'>
+                        <Button wideMobile>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Customer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </Button>
+                      </BookLink>
+                    </center>
+                  </>
+                ) : (
+                  <>
+                    <center>
+                      <a href="https://jaredleunghaircutting.setmore.com/">
+                        <Button wideMobile>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mississauga Location&nbsp;&nbsp;&nbsp;&nbsp;
+                        </Button>
+                      </a>
+                    </center>
+                    <br></br>
+                    <center>
+                      <a href="https://jaredleunghaircuttingyorkdale.setmore.com/">
+                        <Button wideMobile>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yorkdale Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </Button>
+                      </a>
+                    </center>
+                    <br></br>
+                    <center>
+                      <Button small onClick={() => setShowLocationOptions(false)}>
+                        Back
+                      </Button>
+                    </center>
+                  </>
+                )}
               </div>
           </div>
         </div>

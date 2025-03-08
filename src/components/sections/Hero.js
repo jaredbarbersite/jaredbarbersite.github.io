@@ -103,7 +103,7 @@ const Hero = ({
   };
 
   // Hero section with brand colors
-  const heroStyle = {
+  const backgroundStyle = {
     // Light base color
     backgroundColor: '#f5f5f5',
   
@@ -135,7 +135,7 @@ const Hero = ({
   };
 
   return (
-    <section {...props} className={outerClasses} style={heroStyle}>
+    <section {...props} className={outerClasses} style={backgroundStyle}>
       <div className="container">
         <div className={innerClasses}>
           <div className="hero-content">

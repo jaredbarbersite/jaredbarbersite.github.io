@@ -38,158 +38,136 @@ const Testimonial = ({
     bottomDivider && "has-bottom-divider"
   );
 
-  const tilesClasses = classNames("tiles-wrap", pushLeft && "push-left");
+  const backgroundStyle = {
+    // Light base color
+    backgroundColor: '#f5f5f5',
+  
+    // Diagonal stripes with wider spacing
+    backgroundImage: `
+      repeating-linear-gradient(
+        -45deg,
+        #f5f5f5 0,
+        #f5f5f5 59px,
+        #e6e6e6 30px,
+        #e6e6e6 60px
+      )
+    `,
+    position: 'relative',
+    paddingTop: '60px',
+    paddingBottom: '60px'
+  };
 
   const sectionHeader = {
-    title: "Services",
+    title: "Location and Services",
+    style: { color: '#333333' }
   };
 
   return (
-    <section {...props} className={outerClasses}>
+    <section {...props} className={outerClasses} style={backgroundStyle}>
       <div id="services" className="container">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}>
-            <div
-              className="tiles-item reveal-from-right"
-              data-reveal-delay="100"
-            >
-              <div className="tiles-item-inner">
+          
+          <div className="center-content">
+            <div className="pricing-info mb-48" style={{
+              textAlign: 'center', 
+              maxWidth: '800px', 
+              margin: '0 auto', 
+              padding: '30px', 
+              backgroundColor: 'rgba(255, 255, 255, 0.9)', 
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              color: '#333333',
+              border: '1px solid #ddd'
+            }}>
+              <h4 style={{marginBottom: '24px', color: '#333333'}}>
+                <em>*All New Customers are subject to a $30 deposit (deducted from Haircut Price)*</em>
+              </h4>
+              <h3 style={{marginBottom: '16px', color: '#333333', fontWeight: 'bold'}}>New Customer Haircut Transformation $100</h3>
+              {/* Add back later? I don't know what this means */}
+              {/* <h3 style={{color: '#333333', fontWeight: 'bold'}}>Haircut $80</h3> */}
+            </div>
+            
+            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', maxWidth: '1400px', margin: '0 auto', gap: '30px'}}>
+              {/* Mississauga Location */}
+              <div style={{flex: '1 1 calc(50% - 15px)', minWidth: '340px', maxWidth: 'calc(50% - 15px)'}}>
+                <div style={{
+                  backgroundColor: 'white',
+                  padding: '20px',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}>
+                  <h3 style={{marginBottom: '16px', color: '#333333', fontSize: '26px', textAlign: 'center'}}>Mississauga Location:</h3>
+                  <div style={{
+                    borderRadius: '6px',
+                    overflow: 'hidden',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+                    flex: '1',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
                     <Image
-                      src={require('../../haircut.jpg')}
-                      alt="Features tile icon 06"
-                      width={300}
-                      height={250} />
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <center><h4>Haircut</h4></center>
-                  <center><h5>C$80.00 (60mins)</h5></center>
+                      src={require('../../mississauga.jpg')}
+                      alt="Mississauga Location"
+                      width={1200}
+                      height={900}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                        aspectRatio: '4/3',
+                        objectFit: 'cover'
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div
-              className="tiles-item reveal-from-bottom"
-              data-reveal-delay="100"
-            >
-              <div className="tiles-item-inner">
+              {/* Yorkdale Location */}
+              <div style={{flex: '1 1 calc(50% - 15px)', minWidth: '340px', maxWidth: 'calc(50% - 15px)'}}>
+                <div style={{
+                  backgroundColor: 'white',
+                  padding: '20px',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}>
+                  <h3 style={{marginBottom: '16px', color: '#333333', fontSize: '26px', textAlign: 'center'}}>Yorkdale Location:</h3>
+                  <div style={{
+                    borderRadius: '6px',
+                    overflow: 'hidden',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+                    flex: '1',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
                     <Image
-                      src={require('../../side_fade.jpg')}
-                      alt="Features tile icon 06"
-                      width={300}
-                      height={250} />
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <center><h4>Side Fade</h4></center>
-                  <center><h5>C$50.00 (45mins)</h5></center>
-                </div>
-              </div>
-            </div>
-            <div
-              className="tiles-item reveal-from-right"
-              data-reveal-delay="100"
-            >
-              <div className="tiles-item-inner">
-                    <Image
-                      src={require('../../beard_add_on.jpg')}
-                      alt="Features tile icon 06"
-                      width={300}
-                      height={250} />
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <center><h4>Beard (Add-on to haircut)</h4></center>
-                  <center><h5>C$5.00 (15mins)</h5></center>
-                </div>
-              </div>
-            </div>
-            <div
-              className="tiles-item reveal-from-left"
-              data-reveal-delay="100"
-            >
-              <div className="tiles-item-inner">
-                    <Image
-                      src={require('../../beard_alone.jpg')}
-                      alt="Features tile icon 06"
-                      width={300}
-                      height={250} />
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <center><h4>Beard (Alone)</h4></center>
-                  <center><h5>C$15.00 (20mins)</h5></center>
-                </div>
-              </div>
-            </div>
-            <div
-              className="tiles-item reveal-from-left"
-              data-reveal-delay="100"
-            >
-              <div className="tiles-item-inner">
-                    <Image
-                      src={require('../../lineup.jpg')}
-                      alt="Features tile icon 06"
-                      width={300}
-                      height={250} />
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <center><h4>Line Up</h4></center>
-                  <center><h5>C$20.00 (10mins)</h5></center>
+                      src={require('../../yorkdale.jpg')}
+                      alt="Yorkdale Location"
+                      width={1200}
+                      height={900}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                        aspectRatio: '4/3',
+                        objectFit: 'cover'
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
         </div>
-        {/* <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}>
-
-            <div className="tiles-item reveal-from-right" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Roman Level</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-bottom">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Diana Rynzhuk</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-left" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Ben Stafford</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div> */}
       </div>
     </section>
   );

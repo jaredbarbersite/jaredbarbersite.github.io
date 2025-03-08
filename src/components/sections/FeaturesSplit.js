@@ -53,6 +53,8 @@ const FeaturesSplit = ({
     title: 'About me'
   };
 
+  
+
   return (
     <section
       {...props}
