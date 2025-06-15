@@ -6,6 +6,7 @@ import video1 from "../../video1.mp4";
 import video2 from "../../video2.mp4";
 import video3 from "../../video3.mp4";
 import { Link as BookLink } from "react-router-dom";
+import "./Hero.css";
 
 // Debug the video paths to make sure they're correct
 console.log("Video paths:", video1, video2, video3);
@@ -86,22 +87,6 @@ const Hero = ({
     topDivider && "has-top-divider",
     bottomDivider && "has-bottom-divider"
   );
-
-  const videoStyle = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover'
-  };
-  
-  // Larger container style for videos
-  const containerStyle = {
-    width: '32%',
-    height: '500px', // Even larger height
-    overflow: 'hidden',
-    borderRadius: '5px',
-    boxShadow: '0 6px 12px rgba(0,0,0,0.3)'
-  };
-
   // Hero section with brand colors
   const backgroundStyle = {
     // Light base color
@@ -121,18 +106,6 @@ const Hero = ({
     paddingTop: '60px',
     paddingBottom: '60px'
   };
-  
-  // Video container wrapper style - forcing side by side
-  const videoContainerStyle = {
-    display: 'flex', 
-    justifyContent: 'space-between', 
-    gap: '20px', 
-    marginTop: '40px',
-    flexWrap: 'nowrap', // Ensures they STAY side by side
-    maxWidth: '100%', // Allow full width
-    margin: '0 auto',
-    overflowX: 'auto' // Allow horizontal scroll on mobile instead of stacking
-  };
 
   return (
     <section {...props} className={outerClasses} style={backgroundStyle}>
@@ -151,20 +124,18 @@ const Hero = ({
             >
               Jared's Barbershop
             </h1>
-            
-            {/* Video container with flexbox - using full width container */}
-            <div style={videoContainerStyle}>
+              {/* Video container with CSS classes */}
+            <div className="video-container-wrapper">
               {/* First video */}
-              <div style={containerStyle}>
+              <div className="video-container">
                 <video
                   ref={video1Ref}
-                  className="video-player-1"
+                  className="video-style video-player-1"
                   muted
                   playsInline
                   loop
                   controls
                   id="video-player-1"
-                  style={videoStyle}
                 >
                   <source src={video1} type="video/mp4" />
                   Your browser does not support the video tag.
@@ -172,16 +143,15 @@ const Hero = ({
               </div>
               
               {/* Second video */}
-              <div style={containerStyle}>
+              <div className="video-container">
                 <video
                   ref={video2Ref}
-                  className="video-player-2"
+                  className="video-style video-player-2"
                   muted
                   playsInline
                   loop
                   controls
                   id="video-player-2"
-                  style={videoStyle}
                 >
                   <source src={video2} type="video/mp4" />
                   Your browser does not support the video tag.
@@ -189,16 +159,15 @@ const Hero = ({
               </div>
               
               {/* Third video */}
-              <div style={containerStyle}>
+              <div className="video-container">
                 <video
                   ref={video3Ref}
-                  className="video-player-3"
+                  className="video-style video-player-3"
                   muted
                   playsInline
                   loop
                   controls
                   id="video-player-3"
-                  style={videoStyle}
                 >
                   <source src={video3} type="video/mp4" />
                   Your browser does not support the video tag.
