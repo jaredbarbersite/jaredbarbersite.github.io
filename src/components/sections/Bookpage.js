@@ -26,7 +26,7 @@ const Bookpage = ({
   ...props
 }) => {
   const [showLocationOptions, setShowLocationOptions] = useState(false);
-  
+
   const outerClasses = classNames(
     "testimonial section",
     topOuterDivider && "has-top-divider",
@@ -81,14 +81,6 @@ const Bookpage = ({
                       <a href="https://jaredleunghaircutting.setmore.com/">
                         <Button wideMobile>
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mississauga Location&nbsp;&nbsp;&nbsp;&nbsp;
-                        </Button>
-                      </a>
-                    </center>
-                    <br></br>
-                    <center>
-                      <a href="https://jaredleunghaircuttingyorkdale.setmore.com/">
-                        <Button wideMobile>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yorkdale Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </Button>
                       </a>
                     </center>

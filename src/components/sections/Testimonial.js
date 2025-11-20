@@ -41,7 +41,7 @@ const Testimonial = ({
   const backgroundStyle = {
     // Light base color
     backgroundColor: '#f5f5f5',
-  
+
     // Diagonal stripes with wider spacing
     backgroundImage: `
       repeating-linear-gradient(
@@ -67,14 +67,14 @@ const Testimonial = ({
       <div id="services" className="container">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
-          
+
           <div className="center-content">
             <div className="pricing-info mb-48" style={{
-              textAlign: 'center', 
-              maxWidth: '800px', 
-              margin: '0 auto', 
-              padding: '30px', 
-              backgroundColor: 'rgba(255, 255, 255, 0.9)', 
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: '30px',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
               borderRadius: '8px',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               color: '#333333',
@@ -87,10 +87,23 @@ const Testimonial = ({
               {/* Add back later? I don't know what this means */}
               {/* <h3 style={{color: '#333333', fontWeight: 'bold'}}>Haircut $80</h3> */}
             </div>
-            
-            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', maxWidth: '1400px', margin: '0 auto', gap: '30px'}}>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              maxWidth: '1400px',
+              margin: '0 auto',
+              gap: '30px'
+            }}>
               {/* Mississauga Location */}
-              <div style={{flex: '1 1 calc(50% - 15px)', minWidth: '340px', maxWidth: 'calc(50% - 15px)'}}>
+              <div style={{
+                flex: '0 1 500px',
+                minWidth: '320px',
+                maxWidth: '500px',
+                width: '100%'
+              }}>
                 <div style={{
                   backgroundColor: 'white',
                   padding: '20px',
@@ -126,47 +139,9 @@ const Testimonial = ({
                   </div>
                 </div>
               </div>
-
-              {/* Yorkdale Location */}
-              <div style={{flex: '1 1 calc(50% - 15px)', minWidth: '340px', maxWidth: 'calc(50% - 15px)'}}>
-                <div style={{
-                  backgroundColor: 'white',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}>
-                  <h3 style={{marginBottom: '16px', color: '#333333', fontSize: '26px', textAlign: 'center'}}>Yorkdale Location:</h3>
-                  <div style={{
-                    borderRadius: '6px',
-                    overflow: 'hidden',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-                    flex: '1',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <Image
-                      src={require('../../yorkdale.jpg')}
-                      alt="Yorkdale Location"
-                      width={1200}
-                      height={900}
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                        display: 'block',
-                        aspectRatio: '4/3',
-                        objectFit: 'cover'
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>
