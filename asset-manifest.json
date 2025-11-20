@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.aad7e7a1.css",
-    "main.js": "/static/js/main.584f8743.js",
+    "main.js": "/static/js/main.d155907f.js",
     "static/media/video3.mp4": "/static/media/video3.a1e58a0de5f117d924fb.mp4",
     "static/media/video2.mp4": "/static/media/video2.89d4f1848a61d23a0bae.mp4",
     "static/media/video1.mp4": "/static/media/video1.ecb6f3901dc7c25aa8b1.mp4",
@@ -11,7 +11,6 @@
     "static/media/gallery3.jpg": "/static/media/gallery3.eb6ffb9d68f3b49f55db.jpg",
     "static/media/gallery4.jpg": "/static/media/gallery4.7edac240ff2f9987fa5a.jpg",
     "static/media/mississauga.jpg": "/static/media/mississauga.8b0fb6040c5c88a0bf79.jpg",
-    "static/media/yorkdale.jpg": "/static/media/yorkdale.fdc1a099c5b67e80ff5b.jpg",
     "static/media/bio.jpeg": "/static/media/bio.05389326c1e7e06f6d91.jpeg",
     "static/media/logo.png": "/static/media/logo.b09fe90e89610a355ee4.png",
     "static/media/illustration-section-01.svg": "/static/media/illustration-section-01.980998916c8e9369ffab.svg",
@@ -19,10 +18,10 @@
     "static/media/cta-illustration.svg": "/static/media/cta-illustration.79633e4594ec76a3f01f.svg",
     "index.html": "/index.html",
     "main.aad7e7a1.css.map": "/static/css/main.aad7e7a1.css.map",
-    "main.584f8743.js.map": "/static/js/main.584f8743.js.map"
+    "main.d155907f.js.map": "/static/js/main.d155907f.js.map"
   },
   "entrypoints": [
     "static/css/main.aad7e7a1.css",
-    "static/js/main.584f8743.js"
+    "static/js/main.d155907f.js"
   ]
 }
