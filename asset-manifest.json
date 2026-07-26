@@ -1,15 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.aad7e7a1.css",
-    "main.js": "/static/js/main.d155907f.js",
+    "main.css": "/static/css/main.275b2f1f.css",
+    "main.js": "/static/js/main.8f44e8ab.js",
     "static/media/video3.mp4": "/static/media/video3.a1e58a0de5f117d924fb.mp4",
     "static/media/video2.mp4": "/static/media/video2.89d4f1848a61d23a0bae.mp4",
     "static/media/video1.mp4": "/static/media/video1.ecb6f3901dc7c25aa8b1.mp4",
-    "static/media/gallery5.jpg": "/static/media/gallery5.adc72d3cd99348903168.jpg",
-    "static/media/gallery1.jpg": "/static/media/gallery1.a68cf4da6db4ae96d5b7.jpg",
-    "static/media/gallery2.jpg": "/static/media/gallery2.de99e92b6f74847b236c.jpg",
-    "static/media/gallery3.jpg": "/static/media/gallery3.eb6ffb9d68f3b49f55db.jpg",
-    "static/media/gallery4.jpg": "/static/media/gallery4.7edac240ff2f9987fa5a.jpg",
     "static/media/mississauga.jpg": "/static/media/mississauga.8b0fb6040c5c88a0bf79.jpg",
     "static/media/bio.jpeg": "/static/media/bio.05389326c1e7e06f6d91.jpeg",
     "static/media/logo.png": "/static/media/logo.b09fe90e89610a355ee4.png",
@@ -17,11 +12,11 @@
     "static/media/illustration-section-02.svg": "/static/media/illustration-section-02.f11c21a9745d2454b81c.svg",
     "static/media/cta-illustration.svg": "/static/media/cta-illustration.79633e4594ec76a3f01f.svg",
     "index.html": "/index.html",
-    "main.aad7e7a1.css.map": "/static/css/main.aad7e7a1.css.map",
-    "main.d155907f.js.map": "/static/js/main.d155907f.js.map"
+    "main.275b2f1f.css.map": "/static/css/main.275b2f1f.css.map",
+    "main.8f44e8ab.js.map": "/static/js/main.8f44e8ab.js.map"
   },
   "entrypoints": [
-    "static/css/main.aad7e7a1.css",
-    "static/js/main.d155907f.js"
+    "static/css/main.275b2f1f.css",
+    "static/js/main.8f44e8ab.js"
   ]
 }
