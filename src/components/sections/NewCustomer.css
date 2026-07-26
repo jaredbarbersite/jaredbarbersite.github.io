@@ -1,0 +1,231 @@
+.new-customer-page {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0 !important;
+  color: #484b50;
+  background-color: #f1f1f2;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0,
+    rgba(255, 255, 255, 0.3) 7px,
+    transparent 7px,
+    transparent 78px
+  );
+}
+
+.new-customer-shell {
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(28px, 5svh, 52px) 20px;
+}
+
+.new-customer-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.new-customer-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  color: #08679a;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 12px rgba(36, 45, 55, 0.12);
+  font-size: 2.3rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.new-customer-logo {
+  width: min(57vw, 270px);
+  height: auto;
+  border-radius: 0;
+}
+
+.new-customer-heading {
+  margin: clamp(26px, 4svh, 42px) 0 20px;
+  text-align: center;
+}
+
+.new-customer-heading h1 {
+  margin: 0 0 8px;
+  color: #08679a;
+  font-size: clamp(1.3rem, 5.7vw, 1.75rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.new-customer-heading h1 span {
+  margin: 0 7px;
+  font-size: 0.62em;
+  letter-spacing: -2px;
+}
+
+.new-customer-heading p {
+  margin: 0;
+  color: #666970;
+  font-size: clamp(0.82rem, 3.5vw, 0.98rem);
+}
+
+.new-customer-card {
+  width: 100%;
+  padding: clamp(22px, 5vw, 30px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.87);
+  box-shadow:
+    -8px 5px 22px rgba(102, 115, 255, 0.16),
+    8px 5px 22px rgba(255, 77, 148, 0.17);
+}
+
+.new-customer-intro {
+  text-align: center;
+}
+
+.new-customer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  color: #d00038;
+  background: #e1e1e3;
+  font-size: 1.45rem;
+}
+
+.new-customer-intro h2 {
+  margin: 0 0 8px;
+  color: #08679a;
+  font-size: clamp(1.15rem, 5vw, 1.45rem);
+  text-transform: uppercase;
+}
+
+.new-customer-intro p {
+  max-width: 390px;
+  margin: 0 auto;
+  color: #606369;
+  font-size: clamp(0.8rem, 3.4vw, 0.95rem);
+  line-height: 1.45;
+}
+
+.new-customer-rule {
+  display: block;
+  width: 82%;
+  height: 1px;
+  margin: 20px auto;
+  background: #c82a50;
+}
+
+.new-customer-loading {
+  margin: 0;
+  color: #666970;
+  text-align: center;
+}
+
+.new-customer-document {
+  overflow-wrap: anywhere;
+  color: #404247;
+  font-size: clamp(0.9rem, 3.8vw, 1.05rem);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.new-customer-document > :first-child {
+  margin-top: 0;
+}
+
+.new-customer-document > :last-child {
+  margin-bottom: 0;
+}
+
+.new-customer-document p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.new-customer-document a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  max-width: 100%;
+  margin-top: 4px;
+  padding: 11px 18px;
+  border: 1px solid #707070;
+  border-radius: 999px;
+  color: #4f4f4f !important;
+  background: #d3d3d5;
+  box-shadow:
+    -8px 2px 18px rgba(96, 115, 255, 0.18),
+    8px 2px 18px rgba(255, 65, 149, 0.18);
+  font-family: inherit !important;
+  font-size: 0.86rem !important;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+}
+
+.new-customer-document a:hover,
+.new-customer-document a:focus {
+  color: #333333 !important;
+  background: #c7c7ca;
+}
+
+@media (max-width: 390px) {
+  .new-customer-shell {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .new-customer-card {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media (max-height: 760px) {
+  .new-customer-shell {
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .new-customer-logo {
+    width: min(43vw, 205px);
+  }
+
+  .new-customer-heading {
+    margin: 18px 0 14px;
+  }
+
+  .new-customer-card {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .new-customer-rule {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+}

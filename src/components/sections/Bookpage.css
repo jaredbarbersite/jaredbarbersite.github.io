@@ -1,0 +1,240 @@
+.booking-page {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 0 !important;
+  color: #484b50;
+  background-color: #f1f1f2;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0,
+    rgba(255, 255, 255, 0.3) 7px,
+    transparent 7px,
+    transparent 78px
+  );
+}
+
+.booking-page-shell {
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(28px, 5svh, 54px) 20px;
+}
+
+.booking-page-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.booking-back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  color: #08679a;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 12px rgba(36, 45, 55, 0.12);
+  font-size: 2.3rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.booking-page-logo {
+  width: min(57vw, 270px);
+  height: auto;
+  border-radius: 0;
+}
+
+.booking-page-heading {
+  margin: clamp(28px, 5svh, 48px) 0 24px;
+  text-align: center;
+}
+
+.booking-page-heading h1 {
+  margin: 0 0 10px;
+  color: #08679a;
+  font-size: clamp(1.35rem, 5.8vw, 1.75rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.booking-page-heading h1 span {
+  margin: 0 7px;
+  font-size: 0.62em;
+  letter-spacing: -2px;
+}
+
+.booking-page-heading p {
+  margin: 0;
+  color: #666970;
+  font-size: clamp(0.86rem, 3.6vw, 1rem);
+}
+
+.booking-options-card {
+  display: grid;
+  width: 100%;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow:
+    -8px 5px 22px rgba(102, 115, 255, 0.16),
+    8px 5px 22px rgba(255, 77, 148, 0.17);
+}
+
+.booking-option {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 84px;
+  width: 100%;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid #b5b6b9;
+  border-radius: 17px;
+  color: #4b4d51;
+  background: #d5d5d7;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.booking-option:hover,
+.booking-option:focus {
+  color: #343538;
+  background: #c8c8cb;
+  transform: translateY(-2px);
+}
+
+.booking-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.booking-option-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #08679a;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.booking-option strong,
+.booking-option small {
+  display: block;
+}
+
+.booking-option strong {
+  color: #08679a;
+  font-size: clamp(0.98rem, 4vw, 1.12rem);
+  text-transform: uppercase;
+}
+
+.booking-option small {
+  margin-top: 3px;
+  color: #5d6065;
+  font-size: clamp(0.7rem, 2.8vw, 0.82rem);
+  line-height: 1.25;
+}
+
+.booking-chevron {
+  color: #d00038;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.booking-secondary-button {
+  justify-self: center;
+  padding: 8px 14px;
+  border: 0;
+  color: #08679a;
+  background: transparent;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.booking-page-note {
+  max-width: 390px;
+  margin: 18px 0 0;
+  color: #b40032;
+  font-size: clamp(0.72rem, 3vw, 0.84rem);
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 390px) {
+  .booking-page-shell {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .booking-options-card {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .booking-option {
+    grid-template-columns: 43px minmax(0, 1fr) auto;
+    padding-right: 12px;
+    padding-left: 11px;
+  }
+
+  .booking-option-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-height: 700px) {
+  .booking-page-shell {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .booking-page-logo {
+    width: min(43vw, 205px);
+  }
+
+  .booking-page-heading {
+    margin: 18px 0 15px;
+  }
+
+  .booking-options-card {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .booking-option {
+    min-height: 70px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}

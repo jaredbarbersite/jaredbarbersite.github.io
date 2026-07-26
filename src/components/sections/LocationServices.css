@@ -1,0 +1,248 @@
+.location-section {
+  display: flex;
+  padding: 0 !important;
+  color: #3e4044;
+  background-color: #f1f1f2;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0,
+    rgba(255, 255, 255, 0.3) 7px,
+    transparent 7px,
+    transparent 78px
+  );
+}
+
+.location-shell {
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(22px, 4svh, 42px) 20px;
+}
+
+.location-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.location-logo {
+  width: min(55vw, 260px);
+  height: auto;
+  border-radius: 0;
+}
+
+.location-heading {
+  margin: clamp(22px, 4svh, 38px) 0 18px;
+  text-align: center;
+}
+
+.location-heading h2 {
+  margin: 0;
+  color: #08679a;
+  font-size: clamp(1.15rem, 5.4vw, 1.65rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.location-heading h2 span {
+  margin: 0 7px;
+  font-size: 0.65em;
+  letter-spacing: -2px;
+}
+
+.location-card {
+  width: 100%;
+  margin: 0 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow:
+    -7px 5px 18px rgba(102, 115, 255, 0.14),
+    7px 5px 18px rgba(255, 77, 148, 0.16);
+}
+
+.location-card-icon {
+  width: 38px;
+  margin: 0 auto 8px;
+}
+
+.location-card-icon svg,
+.location-book-button svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke: #076b9b;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.transformation-card {
+  padding: 16px 24px 14px;
+  text-align: center;
+}
+
+.deposit-note {
+  margin: 0;
+  font-size: clamp(0.76rem, 3.2vw, 0.92rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.location-rule {
+  display: block;
+  width: 85%;
+  height: 1px;
+  margin: 18px auto;
+  background: #c82a50;
+}
+
+.transformation-name {
+  margin: 0;
+  color: #333438;
+  font-size: clamp(1.05rem, 4.8vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.transformation-price {
+  margin: 4px 0 0;
+  color: #d00038;
+  font-size: clamp(1.45rem, 6vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.map-card {
+  padding: 12px 18px 18px;
+  text-align: center;
+}
+
+.map-card .location-card-icon {
+  margin-bottom: 3px;
+}
+
+.map-card h3 {
+  margin: 0 0 11px;
+  color: #333438;
+  font-size: clamp(0.95rem, 4vw, 1.1rem);
+  text-transform: uppercase;
+}
+
+.location-map {
+  width: 100%;
+  max-height: 285px;
+  border-radius: 3px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.location-book-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(75%, 290px);
+  min-height: 58px;
+  margin-top: 4px;
+  padding: 9px 24px;
+  border: 1px solid #707070;
+  border-radius: 999px;
+  color: #4f4f4f;
+  background:
+    linear-gradient(rgba(211, 211, 213, 0.97), rgba(211, 211, 213, 0.97)) padding-box,
+    linear-gradient(120deg, #7693ff, #ffffff 34%, #ff5ea8 68%, #ffffff) border-box;
+  box-shadow:
+    -13px 2px 24px rgba(96, 115, 255, 0.25),
+    13px 2px 24px rgba(255, 65, 149, 0.25);
+  font-size: clamp(1.15rem, 5vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.location-book-button svg {
+  width: 28px;
+  stroke: #5f5f61;
+  stroke-width: 2;
+}
+
+.location-book-button:hover,
+.location-book-button:focus {
+  color: #3f3f3f;
+  background-color: #c7c7ca;
+  transform: scale(1.02);
+}
+
+@media (max-width: 390px) {
+  .location-shell {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .transformation-card {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .map-card {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+
+@media (max-height: 850px) {
+  .location-shell {
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .location-logo {
+    width: min(43vw, 205px);
+  }
+
+  .location-heading {
+    margin: 15px 0 12px;
+  }
+
+  .transformation-card {
+    padding-top: 11px;
+    padding-bottom: 10px;
+  }
+
+  .location-card-icon {
+    width: 31px;
+    margin-bottom: 4px;
+  }
+
+  .location-rule {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .map-card {
+    padding-top: 8px;
+    padding-bottom: 11px;
+  }
+
+  .location-map {
+    max-height: 220px;
+  }
+
+  .location-book-button {
+    min-height: 50px;
+  }
+}
+
+@media (min-width: 769px) {
+  .location-shell {
+    max-width: 650px;
+  }
+}

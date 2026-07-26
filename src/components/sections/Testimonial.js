@@ -1,16 +1,39 @@
-import React from "react";
-import classNames from "classnames";
-import { SectionTilesProps } from "../../utils/SectionProps";
-import SectionHeader from "./partials/SectionHeader";
-import Image from '../elements/Image';
+import React from 'react';
+import classNames from 'classnames';
+import { Link as BookLink } from 'react-router-dom';
+import { SectionTilesProps } from '../../utils/SectionProps';
+import logo from '../../logo.png';
+import mapImage from '../../mississauga.jpg';
+import './LocationServices.css';
 
 const propTypes = {
-  ...SectionTilesProps.types,
+  ...SectionTilesProps.types
 };
 
 const defaultProps = {
-  ...SectionTilesProps.defaults,
+  ...SectionTilesProps.defaults
 };
+
+const TagIcon = () => (
+  <svg viewBox="0 0 48 48" aria-hidden="true">
+    <path d="M6 23L23 6h18v18L24 41 6 23z" />
+    <circle cx="33" cy="14" r="3" />
+  </svg>
+);
+
+const PinIcon = () => (
+  <svg viewBox="0 0 48 48" aria-hidden="true">
+    <path d="M24 43S10 30 10 19a14 14 0 0128 0c0 11-14 24-14 24z" />
+    <circle cx="24" cy="19" r="5" />
+  </svg>
+);
+
+const CalendarIcon = () => (
+  <svg viewBox="0 0 48 48" aria-hidden="true">
+    <rect x="8" y="11" width="32" height="29" rx="3" />
+    <path d="M15 7v8M33 7v8M8 20h32M16 27h3M24 27h3M32 27h1M16 33h3M24 33h3" />
+  </svg>
+);
 
 const Testimonial = ({
   className,
@@ -20,128 +43,64 @@ const Testimonial = ({
   bottomDivider,
   hasBgColor,
   invertColor,
-  pushLeft,
   ...props
 }) => {
   const outerClasses = classNames(
-    "testimonial section",
-    topOuterDivider && "has-top-divider",
-    bottomOuterDivider && "has-bottom-divider",
-    hasBgColor && "has-bg-color",
-    invertColor && "invert-color",
+    'testimonial location-section section',
+    topOuterDivider && 'has-top-divider',
+    bottomOuterDivider && 'has-bottom-divider',
+    hasBgColor && 'has-bg-color',
+    invertColor && 'invert-color',
     className
   );
 
   const innerClasses = classNames(
-    "testimonial-inner section-inner",
-    topDivider && "has-top-divider",
-    bottomDivider && "has-bottom-divider"
+    'testimonial-inner location-inner section-inner',
+    topDivider && 'has-top-divider',
+    bottomDivider && 'has-bottom-divider'
   );
 
-  const backgroundStyle = {
-    // Light base color
-    backgroundColor: '#f5f5f5',
-
-    // Diagonal stripes with wider spacing
-    backgroundImage: `
-      repeating-linear-gradient(
-        -45deg,
-        #f5f5f5 0,
-        #f5f5f5 59px,
-        #e6e6e6 30px,
-        #e6e6e6 60px
-      )
-    `,
-    position: 'relative',
-    paddingTop: '60px',
-    paddingBottom: '60px'
-  };
-
-  const sectionHeader = {
-    title: "Location and Services",
-    style: { color: '#333333' }
-  };
-
   return (
-    <section {...props} className={outerClasses} style={backgroundStyle}>
-      <div id="services" className="container">
+    <section {...props} className={outerClasses}>
+      <div id="location" className="container location-shell">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
+          <img className="location-logo" src={logo} alt="Jared's Barbershop" />
 
-          <div className="center-content">
-            <div className="pricing-info mb-48" style={{
-              textAlign: 'center',
-              maxWidth: '800px',
-              margin: '0 auto',
-              padding: '30px',
-              backgroundColor: 'rgba(255, 255, 255, 0.9)',
-              borderRadius: '8px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              color: '#333333',
-              border: '1px solid #ddd'
-            }}>
-              <h4 style={{marginBottom: '24px', color: '#333333'}}>
-                <em>*All New Customers are subject to a $30 deposit (deducted from Haircut Price)*</em>
-              </h4>
-              <h3 style={{marginBottom: '16px', color: '#333333', fontWeight: 'bold'}}>New Customer Haircut Transformation $100</h3>
-              {/* Add back later? I don't know what this means */}
-              {/* <h3 style={{color: '#333333', fontWeight: 'bold'}}>Haircut $80</h3> */}
+          <header className="location-heading">
+            <h2>
+              <span aria-hidden="true">{'///'}</span> Location &amp; Services{' '}
+              <span aria-hidden="true">{'///'}</span>
+            </h2>
+          </header>
+
+          <article className="location-card transformation-card">
+            <div className="location-card-icon">
+              <TagIcon />
             </div>
+            <p className="deposit-note">
+              <em>*All new customers are subject to a $30 deposit<br />(deducted from haircut price)*</em>
+            </p>
+            <span className="location-rule" aria-hidden="true"></span>
+            <p className="transformation-name">New Customer<br />Haircut Transformation</p>
+            <p className="transformation-price">$100</p>
+          </article>
 
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              maxWidth: '1400px',
-              margin: '0 auto',
-              gap: '30px'
-            }}>
-              {/* Mississauga Location */}
-              <div style={{
-                flex: '0 1 500px',
-                minWidth: '320px',
-                maxWidth: '500px',
-                width: '100%'
-              }}>
-                <div style={{
-                  backgroundColor: 'white',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}>
-                  <h3 style={{marginBottom: '16px', color: '#333333', fontSize: '26px', textAlign: 'center'}}>Mississauga Location:</h3>
-                  <div style={{
-                    borderRadius: '6px',
-                    overflow: 'hidden',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-                    flex: '1',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <Image
-                      src={require('../../mississauga.jpg')}
-                      alt="Mississauga Location"
-                      width={1200}
-                      height={900}
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                        display: 'block',
-                        aspectRatio: '4/3',
-                        objectFit: 'cover'
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
+          <article className="location-card map-card">
+            <div className="location-card-icon">
+              <PinIcon />
             </div>
-          </div>
+            <h3>Mississauga Location</h3>
+            <img
+              className="location-map"
+              src={mapImage}
+              alt="Map showing the Mississauga studio location"
+            />
+          </article>
 
+          <BookLink to="/booking" className="location-book-button">
+            <CalendarIcon />
+            <span>Book now</span>
+          </BookLink>
         </div>
       </div>
     </section>

@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { SectionTilesProps } from '../../utils/SectionProps';
-import SectionHeader from './partials/SectionHeader';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { SectionTilesProps } from '../../utils/SectionProps';
+import logo from '../../logo.png';
+import './NewCustomer.css';
 
 const propTypes = {
-  ...SectionTilesProps.types,
+  ...SectionTilesProps.types
 };
 
 const defaultProps = {
-  ...SectionTilesProps.defaults,
+  ...SectionTilesProps.defaults
 };
 
 const NewClient = ({
@@ -20,36 +22,40 @@ const NewClient = ({
   bottomDivider,
   hasBgColor,
   invertColor,
-  pushLeft,
   ...props
 }) => {
   const [documentContent, setDocumentContent] = useState('');
-
-  const fetchDocumentContent = async () => {
-    try {
-      const response = await axios.get(
-        'https://docs.google.com/document/d/e/2PACX-1vRhiTYUk2DRVwfliFvYLedANKO_ijoWGkITg4cFg8OwH85xfDm7uhn90j3Tu_uktiT2cC8Ag_1FIdhh/pub'
-      );
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(response.data, 'text/html');
-      const contentElement = doc.querySelector('.doc-content') || doc.body;
-      let content = contentElement ? contentElement.innerHTML : 'Content not found';
-      content = content.replace(/<a /g, '<a style="color: blue;" ');
-      setDocumentContent(content);
-    } catch (error) {
-      console.error('Error fetching document content:', error);
-      setDocumentContent('Error fetching content');
-    }
-  };
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const fetchDocumentContent = async () => {
+      try {
+        const response = await axios.get(
+          'https://docs.google.com/document/d/e/2PACX-1vRhiTYUk2DRVwfliFvYLedANKO_ijoWGkITg4cFg8OwH85xfDm7uhn90j3Tu_uktiT2cC8Ag_1FIdhh/pub'
+        );
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(response.data, 'text/html');
+        const contentElement = doc.querySelector('.doc-content') || doc.body;
+        setDocumentContent(
+          contentElement ? contentElement.innerHTML : '<p>Booking information is unavailable.</p>'
+        );
+      } catch (error) {
+        console.error('Error fetching document content:', error);
+        setDocumentContent(
+          '<p>Booking information could not be loaded. Please try again shortly.</p>'
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     fetchDocumentContent();
-    const interval = setInterval(fetchDocumentContent, 60000); // Poll every 60 seconds
+    const interval = setInterval(fetchDocumentContent, 60000);
     return () => clearInterval(interval);
   }, []);
 
   const outerClasses = classNames(
-    'testimonial section',
+    'new-customer-page section',
     topOuterDivider && 'has-top-divider',
     bottomOuterDivider && 'has-bottom-divider',
     hasBgColor && 'has-bg-color',
@@ -58,52 +64,50 @@ const NewClient = ({
   );
 
   const innerClasses = classNames(
-    'testimonial-inner section-inner',
+    'new-customer-inner section-inner',
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
   );
 
-  const tilesClasses = classNames('tiles-wrap', pushLeft && 'push-left');
-
-  const sectionHeader = {
-    title: 'Booking policy',
-  };
-
-  const contentStyle = {
-    maxWidth: '275px',
-    margin: '0 auto',
-    padding: '20px',
-    backgroundColor: 'white',
-    borderRadius: '8px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-    overflowWrap: 'break-word',
-    textAlign: 'left',
-    color: 'black'
-  };
-
   return (
     <section {...props} className={outerClasses}>
-      <div className="container">
+      <div className="container new-customer-shell">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}>
-            <div
-              className="tiles-item reveal-from-right"
-              data-reveal-delay="150"
-            >
-              <div className="tiles-item-inner">
-                <center>
-                  <h4>If you're a new customer, please fill out form below. Estimated time it takes for me to get back to you is also below</h4>
-                </center>
-                <center>
-                  <div
-                    style={contentStyle}
-                    dangerouslySetInnerHTML={{ __html: documentContent }}
-                  />
-                </center>
-              </div>
+          <Link to="/booking" className="new-customer-back" aria-label="Back to booking options">
+            ‹
+          </Link>
+
+          <img className="new-customer-logo" src={logo} alt="Jared's Barbershop" />
+
+          <header className="new-customer-heading">
+            <h1>
+              <span aria-hidden="true">{'///'}</span> Booking Policy{' '}
+              <span aria-hidden="true">{'///'}</span>
+            </h1>
+            <p>New customer appointment request</p>
+          </header>
+
+          <article className="new-customer-card">
+            <div className="new-customer-intro">
+              <span className="new-customer-icon" aria-hidden="true">✂</span>
+              <h2>Welcome, new customer!</h2>
+              <p>
+                Review the current wait time and use the form below. Jared will
+                contact you after your request is received.
+              </p>
             </div>
-          </div>
+
+            <span className="new-customer-rule" aria-hidden="true"></span>
+
+            {isLoading ? (
+              <p className="new-customer-loading">Loading booking information…</p>
+            ) : (
+              <div
+                className="new-customer-document"
+                dangerouslySetInnerHTML={{ __html: documentContent }}
+              />
+            )}
+          </article>
         </div>
       </div>
     </section>
